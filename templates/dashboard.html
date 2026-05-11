@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <!-- Analytics Section -->
+    <div class="analytics">
+        <h3>Analytics</h3>
+        <div id="analytics-data">
+            <p>Total: <span id="total-tasks">0</span></p>
+            <p>Completed: <span id="completed-tasks">0</span></p>
+            <p>Pending: <span id="pending-tasks">0</span></p>
+            <p>Completion: <span id="completion-pct">0%</span></p>
+        </div>
+    </div>
+
+    <!-- Add Task Form -->
+    <div class="task-form">
+        <h3>Add New Task</h3>
+        <form id="add-task-form">
+            <input type="text" id="title" placeholder="Title" required>
+            <textarea id="description" placeholder="Description"></textarea>
+            <select id="priority">
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+
+    <!-- Task List -->
+    <div class="task-list">
+        <h3>My Tasks</h3>
+        <table id="tasks-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tasks-body">
+                <!-- Tasks loaded via JS -->
+            </tbody>
+        </table>
+    </div>
+    
+    <div id="live-status">🔴 Disconnected</div>
+</div>
+{% endblock %}
